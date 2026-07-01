@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard Pro</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>🌤️ Weather Dashboard Pro</h1>
+            <button id="geoBtn" class="geo-btn">📍 My Location</button>
+        </header>
+
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="cityInput" placeholder="Enter city name...">
+                <button id="searchBtn">Search</button>
+            </div>
+            <div class="favorites-section">
+                <h3>⭐ Favorites</h3>
+                <div id="favoritesList"></div>
+            </div>
+        </div>
+
+        <div id="errorMessage" class="error-message"></div>
+
+        <div id="currentWeather" class="weather-card">
+            <div class="weather-header">
+                <h2 id="cityName"></h2>
+                <span id="countryName"></span>
+            </div>
+            <div class="weather-main">
+                <div class="temp-section">
+                    <span id="temperature"></span>
+                    <span id="conditionIcon"></span>
+                </div>
+                <div class="details-section">
+                    <p>💨 Wind: <span id="windSpeed"></span> km/h</p>
+                    <p>💧 Humidity: <span id="humidity"></span>%</p>
+                    <p>🌡️ Feels like: <span id="feelsLike"></span>°C</p>
+                    <p>☁️ Clouds: <span id="clouds"></span>%</p>
+                </div>
+            </div>
+            <button id="favoriteBtn" class="fav-btn">☆ Add to Favorites</button>
+        </div>
+
+        <div id="forecastSection" class="forecast-section">
+            <h3>📊 5-Day Forecast</h3>
+            <div id="forecastContainer" class="forecast-grid"></div>
+            <div class="chart-container">
+                <canvas id="tempChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
