@@ -3,5 +3,15 @@
   "scope": "codebase",
   "type": "frontend",
   "localEndpoint": "http://localhost:8080/",
-  "serverPort": 63601
+  "serverPort": 65421,
+  "executionArgs": {
+    "projectName": "weather-dashboard",
+    "projectPath": "f:\\weather-dashboard",
+    "testIds": [],
+    "additionalInstruction": "Focus on verifying: 1) Search for Arabic city name \"القاهره\" resolves to Cairo and shows weather. 2) Location Weather: Fetch weather from current location via My Location button. Also spot-check Cairo search still works.",
+    "serverMode": "development",
+    "envs": {
+      "API_KEY": "sk-user-3bMrVmJoy9Dz...ZynReJMd4VyDoFe5keg8"
+    }
+  }
 }

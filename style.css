@@ -307,15 +307,15 @@ header h1 {
     .search-section {
         grid-template-columns: 1fr;
     }
-    
+
     .weather-main {
         grid-template-columns: 1fr;
     }
-    
+
     .details-section {
         grid-template-columns: 1fr;
     }
-    
+
     .temp-section span:first-child {
         font-size: 3em;
     }
