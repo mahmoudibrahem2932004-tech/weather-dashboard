@@ -81,3 +81,9 @@
 - [x] Error: Timeout waiting for weather data
 - [x] Fix: Improved API response handling and added loading states
 - [x] Verify: Cairo weather loads within timeout
+
+## Loop 15 - Location Weather Blocked in Test Environment
+- [x] Test: View current weather for my location
+- [x] Error: Geolocation blocked in test environment, test marked as Blocked
+- [x] Fix: Added fallback error message and resetGeoButton() for environment limitations
+- [x] Verify: Test shows clear error without hanging
