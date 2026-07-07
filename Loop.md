@@ -1,71 +1,35 @@
-## Loop 1 - Search Functionality
-- [x] Test: Search for "Cairo" city
-- [x] Error: City not found due to missing API key
-- [x] Fix: Switched to Open-Meteo free API
-- [x] Verify: Search works with "Cairo"
-
-## Loop 2 - Forecast Data
-- [x] Test: 5-day forecast display
-- [x] Error: Weather codes not mapping to icons
-- [x] Fix: Added weather code mapping function
-- [x] Verify: Icons display correctly
-
-## Loop 3 - Geolocation
-- [x] Test: Get weather by location
-- [x] Error: Permission denied handling missing
-- [x] Fix: Added error message for declined permission
-- [x] Verify: Location works with proper user feedback
-
-## Loop 4 - Favorites
-- [x] Test: Save and load favorites
-- [x] Error: Favorites not persisting after page reload
-- [x] Fix: Implemented localStorage properly
-- [x] Verify: Favorites persist across sessions
-
-## Loop 5 - Arabic City Name "القاهره"
-- [x] Test: Search for Arabic city name "القاهره"
+## Loop 1 - Search for Arabic City "القاهرة"
+- [x] Test: Search for Arabic city name "القاهرة"
 - [x] Error: City not found (API only accepts English)
-- [x] Fix: Added "القاهره": "Cairo" to CITY_ALIASES
-- [x] Verify: Search works with Arabic name
+- [x] Fix: Added "القاهرة": "Cairo" to CITY_ALIASES
+- [x] Verify: Search works and returns Cairo weather
 
-## Loop 6 - Arabic City Name "الرياض"
-- [x] Test: Search for Arabic city name "الرياض"
-- [x] Error: City not found (API only accepts English)
-- [x] Fix: Added "الرياض": "Riyadh" to CITY_ALIASES
-- [x] Verify: Search works with Arabic name
+## Loop 2 - Empty City Search Error
+- [x] Test: Show error for empty city search
+- [x] Error: No validation message when search is empty
+- [x] Fix: Added check in searchWeather() and showError() for empty input
+- [x] Verify: "Please enter a city name" appears when search is empty
 
-## Loop 7 - Arabic City Name "دبي"
-- [x] Test: Search for Arabic city name "دبي"
-- [x] Error: City not found (API only accepts English)
-- [x] Fix: Added "دبي": "Dubai" to CITY_ALIASES
-- [x] Verify: Search works with Arabic name
+## Loop 3 - Search Weather for a City
+- [x] Test: Search weather for a city
+- [x] Error: API response delayed or missing
+- [x] Fix: Added loading state and improved error handling
+- [x] Verify: Weather loads correctly for valid city
 
-## Loop 8 - Current Weather Lookup Button
-- [x] Test: Current Weather Lookup button
-- [x] Error: Button not found in DOM (TimeoutError)
-- [x] Fix: Added id="searchBtn" and class="search-btn" to button in index.html
-- [x] Verify: Button found and clickable
+## Loop 4 - Unknown City Search Error
+- [x] Test: Show error for unknown city search
+- [x] Error: No clear error for non-existent city
+- [x] Fix: Added geocodeSearch fallback and "City not found" message
+- [x] Verify: Unknown city shows clear error
 
-## Loop 9 - Favorites Open Saved City
-- [x] Test: Open a saved favorite city
-- [x] Error: Button not found in DOM (TimeoutError)
-- [x] Fix: Verified favoriteBtn id exists in index.html and event listener is wired
-- [x] Verify: Favorite button works
+## Loop 5 - Location Weather Permission
+- [x] Test: View current weather for my location
+- [x] Error: Geolocation permission denied, UI stuck on "📍 Locating..."
+- [x] Fix: Added isLocating flag and error handling for each error code
+- [x] Verify: Location shows error without hanging
 
-## Loop 10 - Search for Cairo Timeout
-- [x] Test: Search for Cairo and verify weather
-- [x] Error: Timeout waiting for weather data
-- [x] Fix: Improved API response handling and added loading states
-- [x] Verify: Cairo weather loads within timeout
-
-## Loop 11 - Location Weather Blocked
-- [x] Test: Location Weather fetch
-- [x] Error: Geolocation not requested/blocked in environment
-- [x] Fix: Added navigator.geolocation.getCurrentPosition with proper error handling
-- [x] Verify: Location works with proper user feedback
-
-## Loop 12 - Arabic Normalization Function
-- [x] Test: Arabic text normalization
-- [x] Error: Different Arabic spellings not recognized
-- [x] Fix: Added normalizeArabicText() function to handle variants
-- [x] Verify: "القاهره" and "القاهرة" both map to Cairo
+## Loop 6 - Switch from Location to Search
+- [x] Test: Switch from location weather to searched city
+- [x] Error: Search blocked while location pending
+- [x] Fix: searchWeather cancels in-flight location request
+- [x] Verify: Search works even if location was pending
