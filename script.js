@@ -4,6 +4,7 @@ let currentCountry = '';
 let currentLat = 0;
 let currentLon = 0;
 let weatherChart = null;
+let isLocating = false;
 
 const CITY_ALIASES = {
     'القاهره': 'Cairo',
@@ -74,6 +75,11 @@ function resolveCityName(input) {
 }
 
 function searchWeather() {
+    if (isLocating) {
+        isLocating = false;
+        resetGeoButton();
+        showError('Location search cancelled. Searching for city instead.');
+    }
     const city = document.getElementById('cityInput').value.trim();
     if (!city) {
         showError('Please enter a city name');
@@ -85,11 +91,12 @@ function searchWeather() {
 }
 
 function getLocationWeather() {
+    if (isLocating) return;
     if (!navigator.geolocation) {
         showError('Geolocation is not supported by your browser.');
         return;
     }
-
+    isLocating = true;
     const geoBtn = document.getElementById('geoBtn');
     geoBtn.disabled = true;
     geoBtn.textContent = '📍 Locating...';
@@ -128,6 +135,7 @@ function resetGeoButton() {
     const geoBtn = document.getElementById('geoBtn');
     geoBtn.disabled = false;
     geoBtn.textContent = '📍 My Location';
+    isLocating = false;
 }
 
 async function reverseGeocode(lat, lon) {
