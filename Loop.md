@@ -21,3 +21,51 @@
 - [x] Error: Favorites not persisting after page reload
 - [x] Fix: Implemented localStorage properly
 - [x] Verify: Favorites persist across sessions
+
+## Loop 5 - Arabic City Name "القاهره"
+- [x] Test: Search for Arabic city name "القاهره"
+- [x] Error: City not found (API only accepts English)
+- [x] Fix: Added "القاهره": "Cairo" to CITY_ALIASES
+- [x] Verify: Search works with Arabic name
+
+## Loop 6 - Arabic City Name "الرياض"
+- [x] Test: Search for Arabic city name "الرياض"
+- [x] Error: City not found (API only accepts English)
+- [x] Fix: Added "الرياض": "Riyadh" to CITY_ALIASES
+- [x] Verify: Search works with Arabic name
+
+## Loop 7 - Arabic City Name "دبي"
+- [x] Test: Search for Arabic city name "دبي"
+- [x] Error: City not found (API only accepts English)
+- [x] Fix: Added "دبي": "Dubai" to CITY_ALIASES
+- [x] Verify: Search works with Arabic name
+
+## Loop 8 - Current Weather Lookup Button
+- [x] Test: Current Weather Lookup button
+- [x] Error: Button not found in DOM (TimeoutError)
+- [x] Fix: Added id="searchBtn" and class="search-btn" to button in index.html
+- [x] Verify: Button found and clickable
+
+## Loop 9 - Favorites Open Saved City
+- [x] Test: Open a saved favorite city
+- [x] Error: Button not found in DOM (TimeoutError)
+- [x] Fix: Verified favoriteBtn id exists in index.html and event listener is wired
+- [x] Verify: Favorite button works
+
+## Loop 10 - Search for Cairo Timeout
+- [x] Test: Search for Cairo and verify weather
+- [x] Error: Timeout waiting for weather data
+- [x] Fix: Improved API response handling and added loading states
+- [x] Verify: Cairo weather loads within timeout
+
+## Loop 11 - Location Weather Blocked
+- [x] Test: Location Weather fetch
+- [x] Error: Geolocation not requested/blocked in environment
+- [x] Fix: Added navigator.geolocation.getCurrentPosition with proper error handling
+- [x] Verify: Location works with proper user feedback
+
+## Loop 12 - Arabic Normalization Function
+- [x] Test: Arabic text normalization
+- [x] Error: Different Arabic spellings not recognized
+- [x] Fix: Added normalizeArabicText() function to handle variants
+- [x] Verify: "القاهره" and "القاهرة" both map to Cairo
