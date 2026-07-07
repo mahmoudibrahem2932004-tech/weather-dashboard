@@ -33,3 +33,51 @@
 - [x] Error: Search blocked while location pending
 - [x] Fix: searchWeather cancels in-flight location request
 - [x] Verify: Search works even if location was pending
+
+## Loop 7 - Arabic Normalization Function
+- [x] Test: Arabic text normalization
+- [x] Error: Different Arabic spellings not recognized
+- [x] Fix: Added normalizeArabicText() function to handle variants
+- [x] Verify: "القاهره" and "القاهرة" both map to Cairo
+
+## Loop 8 - Geolocation Error Messages
+- [x] Test: Show error for location permission denied
+- [x] Error: No clear error message for each geolocation error code
+- [x] Fix: Added custom messages for error codes 1, 2, 3
+- [x] Verify: User sees specific error for each case
+
+## Loop 9 - UI Button Reset After Location Error
+- [x] Test: Location button resets after error
+- [x] Error: Button stayed disabled and showed "📍 Locating..." after error
+- [x] Fix: Added resetGeoButton() to reset button state after error
+- [x] Verify: Button resets to "📍 My Location" after error
+
+## Loop 10 - Favorites Persistence
+- [x] Test: Save and load favorites
+- [x] Error: Favorites not persisting after page reload
+- [x] Fix: Implemented localStorage properly
+- [x] Verify: Favorites persist across sessions
+
+## Loop 11 - Forecast Data Display
+- [x] Test: 5-day forecast display
+- [x] Error: Weather codes not mapping to icons
+- [x] Fix: Added weather code mapping function
+- [x] Verify: Icons display correctly
+
+## Loop 12 - Current Weather Lookup Button
+- [x] Test: Current Weather Lookup button
+- [x] Error: Button not found in DOM (TimeoutError)
+- [x] Fix: Added id="searchBtn" and class="search-btn" to button in index.html
+- [x] Verify: Button found and clickable
+
+## Loop 13 - Favorites Open Saved City
+- [x] Test: Open a saved favorite city
+- [x] Error: Button not found in DOM (TimeoutError)
+- [x] Fix: Verified favoriteBtn id exists in index.html and event listener is wired
+- [x] Verify: Favorite button works
+
+## Loop 14 - Search for Cairo Timeout
+- [x] Test: Search for Cairo and verify weather
+- [x] Error: Timeout waiting for weather data
+- [x] Fix: Improved API response handling and added loading states
+- [x] Verify: Cairo weather loads within timeout
