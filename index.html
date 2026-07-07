@@ -16,8 +16,8 @@
 
         <div class="search-section">
             <div class="search-box">
-                <input type="text" id="cityInput" placeholder="Enter city name...">
-                <button id="searchBtn">Search</button>
+                <input type="text" id="cityInput" placeholder="Enter city name..." aria-label="City search input">
+                <button id="searchBtn" class="search-btn">Search</button>
             </div>
             <div class="favorites-section">
                 <h3>⭐ Favorites</h3>
@@ -25,8 +25,8 @@
             </div>
         </div>
 
-        <div id="loadingMessage" class="loading-message"></div>
-        <div id="errorMessage" class="error-message"></div>
+        <div id="loadingMessage" class="loading-message" role="status" aria-live="polite"></div>
+        <div id="errorMessage" class="error-message" role="alert"></div>
 
         <div id="currentWeather" class="weather-card">
             <div class="weather-header">
